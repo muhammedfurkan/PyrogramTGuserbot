@@ -3,7 +3,7 @@ from pyrouserbot import app, cmd
 from pyrogram import Filters, Client
 from pyrouserbot.deldog import paste
 
-@app.on_message(Filters.command(["json"],cmd) & Filters.me)
+@Client.on_message(Filters.command(["json"],cmd) & Filters.me)
 async def js_os(client, message):
       if message.reply_to_message:
          text=message.reply_to_message

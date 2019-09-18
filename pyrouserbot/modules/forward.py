@@ -2,7 +2,7 @@ import pyrogram, os, time
 from pyrogram import Filters, Client
 from pyrouserbot import app, cmd
 
-@app.on_message(Filters.command(["fwd"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["fwd"], cmd) & Filters.me)
 async def for_ward(client, message):
       FORWARD_TARGET=os.environ.get("FORWARD_ID")
       if not FORWARD_TARGET:

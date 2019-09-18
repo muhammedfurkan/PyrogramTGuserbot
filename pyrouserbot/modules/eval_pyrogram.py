@@ -8,7 +8,7 @@ ERROR = "**Eval Expression:**\n```{}```\n**Error:**\n```{}```"
 SUCCESS = "**Eval Expression:**\n```{}```\n**Success**"
 RESULT = "**Eval Expression:**\n```{}```\n**Result:**\n```{}```"
 
-@app.on_message(Filters.command("evp", cmd) & Filters.me)
+@Client.on_message(Filters.command("evp", cmd) & Filters.me)
 async def eval_expression(client, message):
     expression = " ".join(message.command[1:])
 

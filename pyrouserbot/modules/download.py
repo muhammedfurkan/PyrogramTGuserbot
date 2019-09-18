@@ -6,7 +6,7 @@ DOWNLOAD_LOCATION= "./DOWNLOADS/"
 from pyrouserbot import app, cmd
 from pyrouserbot.display import progress_for_pyrogram, humanbytes
 
-@app.on_message(Filters.command(["download"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["download"], cmd) & Filters.me)
 async def download_telegram(client, message):
       mone = await message.edit("Processing ...") # Reply
       url = message.text[10:]

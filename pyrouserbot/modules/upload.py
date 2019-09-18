@@ -7,7 +7,7 @@ timesleep = 1
 from datetime import datetime
 thumb_image_path = "./DOWNLOADS/thumb.jpg"
 
-@app.on_message(Filters.command(["upload"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["upload"], cmd) & Filters.me)
 async def telegram_upload(client, message):
       msg = await message.edit("Processing ...")
       fname = message.text[8:]

@@ -4,7 +4,7 @@ from pyrogram import Filters, Client
 from pyrouserbot import app, cmd
 
 
-@app.on_message(Filters.command(["get_admin"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["get_admin"], cmd) & Filters.me)
 async def get_admins(client, message):
       mentions = "Admin List: \n"
       input_str = message.text[11:]
@@ -20,7 +20,7 @@ async def get_admins(client, message):
              mentions += " " + str(e) + "\n"
       await message.edit(mentions)
       
-@app.on_message(Filters.command(["men_admin"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["men_admin"], cmd) & Filters.me)
 async def men_admins(client, message):
       mentions = "Admin List: \n"
       input_str = message.text[11:]

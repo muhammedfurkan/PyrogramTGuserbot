@@ -4,7 +4,7 @@ from pyrogram.api import functions
 sleeptime = 1
 from pyrouserbot import app, cmd
 
-@app.on_message(Filters.command(["pname"],cmd) & pyrogram.Filters.me)
+@Client.on_message(Filters.command(["pname"],cmd) & pyrogram.Filters.me)
 async def set_name(client, message):
       if sleeptime < time.time():
          await client.send(functions.account.UpdateProfile(first_name=' '.join(message.command[1:])))
@@ -12,7 +12,7 @@ async def set_name(client, message):
          time.sleep(3)
          await message.delete()
          
-@app.on_message(Filters.command(['pbio'], cmd) & Filters.me)
+@Client.on_message(Filters.command(['pbio'], cmd) & Filters.me)
 async def set_bio(client, message):
       if sleeptime < time.time():
          bio = ' '.join(message.command[1:])
@@ -26,7 +26,7 @@ async def set_bio(client, message):
             time.sleep(3)
             await message.delete()
 
-@app.on_message(Filters.command(['ppic'], cmd) & Filters.me)
+@Client.on_message(Filters.command(['ppic'], cmd) & Filters.me)
 async def set_profile_pic(client, message):
       if sleeptime < time.time():
          if message.reply_to_message:
@@ -38,7 +38,7 @@ async def set_profile_pic(client, message):
          os.remove(pic)
          await message.delete()
          
-@app.on_message(Filters.me & Filters.command(['lname']), cmd)
+@Client.on_message(Filters.me & Filters.command(['lname']), cmd)
 async def onecharacter(client, message):
     if sleeptime < time.time():
        await client.send(functions.account.UpdateProfile(last_name=' '.join(message.command[1:])))

@@ -8,7 +8,7 @@ from pyrouserbot.deldog import haste
 from pyrouserbot import app, cmd
 
 
-@app.on_message(Filters.command(["exec"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["exec"], cmd) & Filters.me)
 async def ex_ec(client, message):
       DELAY_BETWEEN_EDITS = 0.5
       PROCESS_RUN_TIME = 100

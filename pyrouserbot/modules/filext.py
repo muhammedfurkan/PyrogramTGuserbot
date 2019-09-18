@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from pyrouserbot import app, cmd
 
-@app.on_message(Filters.command(["filext"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["filext"], cmd) & Filters.me)
 async def fil_ext(client, message):
       await message.edit("Processing ...")
       sample_url = "https://www.fileext.com/file-extension/{}.html"

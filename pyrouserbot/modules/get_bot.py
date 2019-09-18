@@ -2,7 +2,7 @@ import pyrogram
 from pyrogram import Filters, Client
 from pyrouserbot import app, cmd
 
-@app.on_message(Filters.command(["get_bot"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["get_bot"], cmd) & Filters.me)
 async def get_bots(client, message):
       mentions = "Bots in this Channel: \n"
       input_str = message.text[9:]

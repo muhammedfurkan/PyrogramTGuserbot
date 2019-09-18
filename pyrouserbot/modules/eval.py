@@ -8,7 +8,7 @@ from pyrogram import Filters, Client
 from pyrouserbot.deldog import haste, paste
 from pyrouserbot import app, cmd
 
-@app.on_message(Filters.command(["eval"],cmd) & Filters.me)
+@Client.on_message(Filters.command(["eval"],cmd) & Filters.me)
 async def ev_al(client, message):
       cmd = message.text.split(" ", maxsplit=1)[1]
       reply_to_id = message.message_id

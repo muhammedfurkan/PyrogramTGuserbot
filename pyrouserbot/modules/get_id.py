@@ -2,7 +2,7 @@ import pyrogram
 from pyrogram import Filters, Client
 from pyrouserbot import app, cmd
 
-@app.on_message(Filters.command(["get_id"], cmd) & Filters.me)
+@Client.on_message(Filters.command(["get_id"], cmd) & Filters.me)
 async def get_ids(client, message):
       if message.reply_to_message:
          chat = message.reply_to_message.from_user.id
