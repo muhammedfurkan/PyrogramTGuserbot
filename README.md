@@ -6,7 +6,10 @@
 
 Generate string `SESSION` by following commands:
 <<< For Termux and Linux >>>
-```1. wget https://github.com/PyrogramTGuserbot/PyrogramTGuserbot/raw/develop/generatesession.py
-2. python generatesession.py```
+``` 
+1. wget https://github.com/PyrogramTGuserbot/PyrogramTGuserbot/raw/develop/generatesession.py
+2. python generatesession.py
+
+```
 
 Don't need to install any requirements by command without python 😁. generatesession.py will install all required projects.
