@@ -6,8 +6,9 @@
 
 Generate string `SESSION` by following commands:
 <<< For Termux and Linux >>>
-``` 
-1. wget https://github.com/PyrogramTGuserbot/PyrogramTGuserbot/raw/develop/generatesession.py
+```
+
+1. curl -LJO https://github.com/PyrogramTGuserbot/PyrogramTGuserbot/raw/master/generatesession.py
 2. python generatesession.py
 
 ```

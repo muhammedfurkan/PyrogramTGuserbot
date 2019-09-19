@@ -20,18 +20,10 @@ except:
    APP_ID = raw_input("Enter your APP_ID : ")
    API_HASH = raw_input("Enter your API_HASH : ")
 
-try:
-    app = Client(
+app = Client(
              "PyrogramTGuserbot",
              api_id=APP_ID,
              api_hash=API_HASH
       )
-    with app:
-         print(app.export_session_string())
-except:
-    async with Client(
-             "PyrogramTGuserbot",
-             api_id=APP_ID,
-             api_hash=API_HASH
-      ) as app:
+with app:
          print(app.export_session_string())
