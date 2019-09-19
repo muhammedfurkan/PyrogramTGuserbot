@@ -1,9 +1,12 @@
 import pyrogram
-from pyrogram import Client, Filters
-from pyrouserbot import app, cmd
+from pyrogram import *
+from pyrouserbot import cmd
+from time import sleep
 
 @Client.on_message(Filters.command("restart", cmd) & Filters.me)
-async def _restart(bot, message, app):
-      await app.stop()
-      await app.restart()
-      await message.edit('Restart complete.')
+def restart(client, message):
+    os.execl(sys.executable, sys.executable, *sys.argv)
+    message.edit("Bot restarted...")
+    sleep(2)
+    message.delete()
+    quit()
