@@ -23,7 +23,8 @@
     },
     "LGROUP": {
       "description": "Generate this by get id bot. Get a Logger group id.",
-      "value": ""
+      "value": "",
+      "required": false
     }
   },
   "addons": [
