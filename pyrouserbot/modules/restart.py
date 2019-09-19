@@ -6,8 +6,8 @@ import os, sys
 
 @Client.on_message(Filters.command("restart", cmd) & Filters.me)
 def restart(client, message):
-    message.edit("Bot restarted...")
+    await message.edit("Bot restarted...")
     sleep(2)
-    message.delete()
+    await message.delete()
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
