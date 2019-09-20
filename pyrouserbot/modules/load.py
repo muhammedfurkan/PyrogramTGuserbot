@@ -8,7 +8,7 @@ async def lo_ad(client, message):
       pname = message.text[6:]
       fpname = "pyrouserbot.modules."+pname
       try:
-          client.add_handler(*fpname)
+          client.add_handler(fpname)
           await message.reply(f"Successfully loaded {pname}")
       except Exception as e:
           await message.reply(str(e))
