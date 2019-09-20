@@ -1,7 +1,7 @@
 import pyrogram
 from pyrogram import *
 from pyrouserbot import app, cmd
-
+import pyrouserbot
 
 @Client.on_message(Filters.command(["load"],cmd) & Filters.me)
 async def lo_ad(client, message):
