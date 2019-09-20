@@ -5,7 +5,7 @@ from pyrouserbot import app, cmd
 
 @Client.on_message(Filters.command(["load"],cmd) & Filters.me)
 async def lo_ad(client, message):
-      pname = message.command[1:]
+      pname = message.text[6:]
       fpname = "pyrouserbot.modules."+pname
       try:
           client.add_handler(*fpname)
