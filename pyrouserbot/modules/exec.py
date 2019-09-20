@@ -29,7 +29,14 @@ async def ex_ec(client, message):
              o = "Tip: \n`If you want to see the results of your code, I suggest printing them to stdout.`"
       else:
              _o = o.split("\n")
-             o = "`\n".join(_o)
+             od = ""
+             for x in _o:
+                 od += "`"
+                 od += str(x)
+                 od += "`"
+                 od += "\n"
+             o = od.replace("```","`")
+             print(o)
       OUTPUT = f"QUERY:\n__Command:__\n`{cmd}` \n__PID:__\n`{process.pid}`\n\nstderr: \n`{e}`\nOutput:\n{o}"
       if len(OUTPUT) > 4096:
          LINK=haste(OUTPUT)
