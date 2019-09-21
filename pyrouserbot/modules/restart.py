@@ -1,8 +1,12 @@
+import os
+import sys
+from time import sleep
+
 import pyrogram
 from pyrogram import *
+
 from pyrouserbot import cmd
-from time import sleep
-import os, sys
+
 
 @Client.on_message(Filters.command("restart", cmd) & Filters.me)
 await def restart(client, message):

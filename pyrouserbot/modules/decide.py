@@ -1,7 +1,12 @@
-import pyrogram, requests
-from pyrogram import Filters, Client
-from pyrouserbot import app, cmd
 from datetime import datetime
+
+import pyrogram
+import requests
+from pyrogram import Client, Filters
+
+from pyrouserbot import app, cmd
+
+
 @Client.on_message(Filters.command(["decide"], cmd) & Filters.me)
 async def de_cide(client, message):
       message_id = message.message_id
@@ -14,4 +19,3 @@ async def de_cide(client, message):
             reply_to_message_id=message_id
       )
       await message.delete()
-      

@@ -1,7 +1,11 @@
-import pyrogram, json
+import json
+
+import pyrogram
+from pyrogram import Client, Filters
+
 from pyrouserbot import app, cmd
-from pyrogram import Filters, Client
 from pyrouserbot.deldog import paste
+
 
 @Client.on_message(Filters.command(["json"],cmd) & Filters.me)
 async def js_os(client, message):
@@ -15,4 +19,3 @@ async def js_os(client, message):
             return
       else:
             await message.edit("Json: \n`{}`".format(text))
-      

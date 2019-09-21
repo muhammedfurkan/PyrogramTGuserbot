@@ -1,6 +1,11 @@
-import pyrogram, os, time
-from pyrogram import Filters, Client
+import os
+import time
+
+import pyrogram
+from pyrogram import Client, Filters
+
 from pyrouserbot import app, cmd
+
 
 @Client.on_message(Filters.command(["fwd"], cmd) & Filters.me)
 async def for_ward(client, message):
@@ -17,4 +22,3 @@ async def for_ward(client, message):
          await message.edit("You have to reply to a document for Forward")
          time.sleep(5)
          await message.delete()
-         

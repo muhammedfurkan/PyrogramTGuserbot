@@ -1,8 +1,13 @@
-import pyrogram, time, os
+import os
+import time
+
+import pyrogram
 from pyrogram import Client, Filters
 from pyrogram.api import functions
-sleeptime = 1
+
 from pyrouserbot import app, cmd
+
+sleeptime = 1
 
 @Client.on_message(Filters.command(["pname"],cmd) & pyrogram.Filters.me)
 async def set_name(client, message):
@@ -45,4 +50,3 @@ async def onecharacter(client, message):
        await  message.edit('`Last name set succesfully`')
        time.sleep(3)
        await message.delete()
-      

@@ -1,10 +1,18 @@
-import pyrogram, time, os, aiohttp, asyncio, math, time
-from pySmartDL import SmartDL
-from pyrogram import Client, Filters
+import asyncio
+import math
+import os
+import time
 from datetime import datetime
-DOWNLOAD_LOCATION= "./DOWNLOADS/"
+
+import aiohttp
+import pyrogram
+from pyrogram import Client, Filters
+from pySmartDL import SmartDL
+
 from pyrouserbot import app, cmd
-from pyrouserbot.display import progress_for_pyrogram, humanbytes
+from pyrouserbot.display import humanbytes, progress_for_pyrogram
+
+DOWNLOAD_LOCATION= "./DOWNLOADS/"
 
 @Client.on_message(Filters.command(["download"], cmd) & Filters.me)
 async def download_telegram(client, message):

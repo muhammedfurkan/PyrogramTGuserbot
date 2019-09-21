@@ -1,7 +1,10 @@
-import pyrogram
-from pyrogram import Filters, Client
-from pyrouserbot import app, cmd
 from datetime import datetime
+
+import pyrogram
+from pyrogram import Client, Filters
+
+from pyrouserbot import app, cmd
+
 
 @Client.on_message(Filters.command(["ping"],cmd) & Filters.me)
 async def pi_ng(client, message):
@@ -10,4 +13,3 @@ async def pi_ng(client, message):
       end = datetime.now()
       ms = (end - start).microseconds / 1000
       await message.edit("Pong!\n{} ms".format(ms))
-      

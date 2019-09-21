@@ -1,12 +1,15 @@
-import inspect
-import traceback
 import asyncio
-import sys
+import inspect
 import io
+import sys
+import traceback
+
 import pyrogram
-from pyrogram import Filters, Client
-from pyrouserbot.deldog import haste, paste
+from pyrogram import Client, Filters
+
 from pyrouserbot import app, cmd
+from pyrouserbot.deldog import haste, paste
+
 
 @Client.on_message(Filters.command(["eval"],cmd) & Filters.me)
 async def ev_al(client, message):
@@ -58,4 +61,3 @@ async def aexec(code, message):
         ''.join(f'\n {l}' for l in code.split('\n'))
     )
     return await locals()['__aexec'](message)
-
