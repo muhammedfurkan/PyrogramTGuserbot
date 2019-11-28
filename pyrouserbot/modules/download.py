@@ -10,9 +10,12 @@ from pyrouserbot.display import progress_for_pyrogram, humanbytes
 async def download_telegram(client, message):
       mone = await message.edit("Processing ...") # Reply
       url = message.text[10:]
+      file_name = message.text[10:]
       if message.reply_to_message:
          start = datetime.now()
          c_time = time.time()
+         if file_name != "":
+            DOWNLOAD_LOCATION = DOWNLOAD_LOCATION+file_name
          try:
              downloaded_file_name = await message.reply_to_message.download(
                                     file_name=DOWNLOAD_LOCATION,
