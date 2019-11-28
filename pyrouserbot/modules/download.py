@@ -88,7 +88,7 @@ async def download_telegram(client, message):
       
       
 @Client.on_message(Filters.command(["thumbnail"], cmd) & Filters.me)
-async def download_telegram(client, message):
+async def thumbnail_telegram(client, message):
       mone = await message.edit("Processing ...") # Reply
       if message.reply_to_message:
          start = datetime.now()
