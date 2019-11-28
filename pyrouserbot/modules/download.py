@@ -2,7 +2,6 @@ import pyrogram, time, os, aiohttp, asyncio, math, time
 from pySmartDL import SmartDL
 from pyrogram import Client, Filters
 from datetime import datetime
-DOWNLOAD_LOCATION= "./DOWNLOADS/"
 from pyrouserbot import app, cmd
 from pyrouserbot.display import progress_for_pyrogram, humanbytes
 
@@ -11,6 +10,7 @@ async def download_telegram(client, message):
       mone = await message.edit("Processing ...") # Reply
       url = message.text[10:]
       file_name = message.text[10:]
+      DOWNLOAD_LOCATION= "./DOWNLOADS/"
       if message.reply_to_message:
          start = datetime.now()
          c_time = time.time()
@@ -90,6 +90,7 @@ async def download_telegram(client, message):
 @Client.on_message(Filters.command(["thumbnail"], cmd) & Filters.me)
 async def thumbnail_telegram(client, message):
       mone = await message.edit("Processing ...") # Reply
+      DOWNLOAD_LOCATION= "./DOWNLOADS/"
       if message.reply_to_message:
          start = datetime.now()
          c_time = time.time()
