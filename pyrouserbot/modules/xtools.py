@@ -1,6 +1,7 @@
 from datetime import datetime
 import requests
 from pyrogram import Client, Filters
+from pyrouserbot import cmd
 
 
 @Client.on_message(Filters.command(["xtools"], cmd) & Filters.me)
