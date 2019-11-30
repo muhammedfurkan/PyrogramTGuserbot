@@ -3,12 +3,6 @@ import math
 import os
 import time
 from datetime import datetime
-
-import aiohttp
-import pyrogram
-from pyrogram import Client, Filters
-from pySmartDL import SmartDL
-
 from pyrouserbot import app, cmd
 from pyrouserbot.display import humanbytes, progress_for_pyrogram
 
@@ -18,9 +12,13 @@ DOWNLOAD_LOCATION= "./DOWNLOADS/"
 async def download_telegram(client, message):
       mone = await message.edit("Processing ...") # Reply
       url = message.text[10:]
+      file_name = message.text[10:]
+      DOWNLOAD_LOCATION= "./DOWNLOADS/"
       if message.reply_to_message:
          start = datetime.now()
          c_time = time.time()
+         if file_name != "":
+            DOWNLOAD_LOCATION = DOWNLOAD_LOCATION+file_name
          try:
              downloaded_file_name = await message.reply_to_message.download(
                                     file_name=DOWNLOAD_LOCATION,
@@ -37,8 +35,8 @@ async def download_telegram(client, message):
              end = datetime.now()
              ms = (end - start).seconds
              await mone.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
-             # time.sleep(100000)
-             # await mone.delete()
+
+
       
       elif url:
            start = datetime.now()
@@ -89,3 +87,36 @@ async def download_telegram(client, message):
            await mone.edit("Reply to a message to download to my local server.")
            time.sleep(5)
            await mone.delete()
+
+      
+      
+@Client.on_message(Filters.command(["thumbnail"], cmd) & Filters.me)
+async def thumbnail_telegram(client, message):
+      mone = await message.edit("Processing ...") # Reply
+      DOWNLOAD_LOCATION= "./DOWNLOADS/"
+      if message.reply_to_message:
+         start = datetime.now()
+         c_time = time.time()
+         DOWNLOAD_LOCATION = DOWNLOAD_LOCATION + "thumb.jpg"
+         try:
+             downloaded_file_name = await message.reply_to_message.download(
+                                    file_name=DOWNLOAD_LOCATION,
+                                    progress=progress_for_pyrogram,
+                                    progress_args=(
+                                                   mone,c_time, "Downloading... "
+             )
+             )
+             downloaded_file_name=downloaded_file_name[4:]
+             downloaded_file_name="."+downloaded_file_name
+         except Exception as e: 
+             await mone.edit(str(e))
+         else:
+             end = datetime.now()
+             ms = (end - start).seconds
+             await mone.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
+      else:
+           await mone.edit("Reply to a message to download to my local server.")
+           time.sleep(5)
+           await mone.delete()
+                  
+                  

@@ -9,7 +9,7 @@ from pyrouserbot import cmd
 
 
 @Client.on_message(Filters.command("restart", cmd) & Filters.me)
-await def restart(client, message):
+async def restart(client, message):
     await message.edit("Bot restarted...")
     sleep(2)
     await message.delete()
