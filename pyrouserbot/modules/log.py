@@ -23,7 +23,7 @@ newest_folder = max(fileList, key=os.path.getmtime)
 async def _logs(client, message: Message):
       try:
 
-        latest_file = max(fileList, key=os.path.getctime)
+        #latest_file = max(fileList, key=os.path.getctime)
 
         for fname in fileList:
           if fname != newest_folder:
