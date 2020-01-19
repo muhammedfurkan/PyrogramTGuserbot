@@ -16,6 +16,5 @@ async def js_os(client, message):
       if len(str(text)) > 4050:
             LINK = paste(text)
             await message.edit(LINK)
-            return
       else:
             await message.edit("Json: \n`{}`".format(text))
