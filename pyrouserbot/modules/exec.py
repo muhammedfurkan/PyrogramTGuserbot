@@ -1,7 +1,7 @@
 import asyncio
 import io
 import subprocess
-import time
+#import time
 
 import pyrogram
 from pyrogram import Client, Filters
