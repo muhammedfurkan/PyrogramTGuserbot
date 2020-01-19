@@ -18,7 +18,7 @@ async def ex_ec(client, message):
       reply_to_id = message.message_id
       if message.reply_to_message:
         reply_to_id = message.reply_to_message.message_id
-      start_time = time.time() + PROCESS_RUN_TIME
+#      start_time = time.time() + PROCESS_RUN_TIME
       process = await asyncio.create_subprocess_shell(
                 cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
       )
