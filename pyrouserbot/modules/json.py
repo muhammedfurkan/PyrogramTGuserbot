@@ -1,9 +1,6 @@
-import json
-
-import pyrogram
 from pyrogram import Client, Filters
 
-from pyrouserbot import app, cmd
+from pyrouserbot import cmd
 from pyrouserbot.deldog import paste
 
 

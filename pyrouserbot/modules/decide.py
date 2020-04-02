@@ -1,10 +1,7 @@
-from datetime import datetime
-
-import pyrogram
 import requests
 from pyrogram import Client, Filters
 
-from pyrouserbot import app, cmd
+from pyrouserbot import cmd
 
 
 @Client.on_message(Filters.command(["decide"], cmd) & Filters.me)

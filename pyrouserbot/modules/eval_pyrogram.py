@@ -2,8 +2,8 @@ import time
 
 from pyrogram import Client, Filters
 
-from pyrouserbot import app, cmd
-from pyrouserbot.deldog import haste, paste
+from pyrouserbot import cmd
+from pyrouserbot.deldog import haste
 
 RUNNING = "**Eval Expression:**\n```{}```\n**Running...**"
 ERROR = "**Eval Expression:**\n```{}```\n**Error:**\n```{}```"

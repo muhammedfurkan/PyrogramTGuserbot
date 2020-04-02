@@ -1,6 +1,6 @@
 import datetime
 import logging.handlers
-import os, pyrogram
+import os
 
 
 def setup(logdir='log'):

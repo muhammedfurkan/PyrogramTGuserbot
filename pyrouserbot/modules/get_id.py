@@ -1,7 +1,6 @@
-import pyrogram
 from pyrogram import Client, Filters
 
-from pyrouserbot import app, cmd
+from pyrouserbot import cmd
 
 
 @Client.on_message(Filters.command(["get_id"], cmd) & Filters.me)

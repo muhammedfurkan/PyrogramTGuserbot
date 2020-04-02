@@ -5,7 +5,6 @@
 ################################
 import os
 try:
-    import pyrogram
     from pyrogram import Client
 except:
     os.system("pip install --upgrade pyrogram")

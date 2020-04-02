@@ -1,9 +1,8 @@
-import asyncio
 import math
 import os
 import time
 from datetime import datetime
-from pyrouserbot import app, cmd
+from pyrouserbot import cmd
 from pyrouserbot.display import humanbytes, progress_for_pyrogram
 
 DOWNLOAD_LOCATION= "./DOWNLOADS/"

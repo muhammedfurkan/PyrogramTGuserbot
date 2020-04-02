@@ -1,8 +1,6 @@
 import os
 import sys
 from time import sleep
-
-import pyrogram
 from pyrogram import *
 
 from pyrouserbot import cmd

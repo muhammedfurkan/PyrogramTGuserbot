@@ -1,6 +1,4 @@
-import sys, importlib, asyncio
 from pyrouserbot import __copy__, __version__, app, logger
-import pyrogram
 from pyrogram import *
 
 
