@@ -1,14 +1,10 @@
-import asyncio
-import inspect
 import io
 import sys
 import traceback
-
-import pyrogram
 from pyrogram import Client, Filters
 
-from pyrouserbot import app, cmd
-from pyrouserbot.deldog import haste, paste
+from pyrouserbot import cmd
+from pyrouserbot.deldog import haste
 
 
 @Client.on_message(Filters.command(["eval"],cmd) & Filters.me)

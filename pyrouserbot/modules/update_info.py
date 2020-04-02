@@ -5,7 +5,7 @@ import pyrogram
 from pyrogram import Client, Filters
 from pyrogram.api import functions
 
-from pyrouserbot import app, cmd
+from pyrouserbot import cmd
 
 sleeptime = 1
 

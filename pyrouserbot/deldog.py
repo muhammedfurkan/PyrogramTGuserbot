@@ -1,4 +1,4 @@
-import requests, json
+import requests
 def haste(TEXT):
       url = "https://del.dog/documents"
       r = requests.post(url, data=TEXT.encode("UTF-8")).json()

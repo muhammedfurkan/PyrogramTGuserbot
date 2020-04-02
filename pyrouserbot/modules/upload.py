@@ -1,12 +1,9 @@
 import os
 import time
 from datetime import datetime
-
-import pyrogram
 from pyrogram import Client, Filters
-from pyrogram.api import functions
 
-from pyrouserbot import app, cmd
+from pyrouserbot import cmd
 from pyrouserbot.display import progress_for_pyrogram
 
 timesleep = 1

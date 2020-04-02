@@ -1,18 +1,11 @@
-import asyncio
 import glob
 import logging
 import os
-import subprocess
-import sys
-import time
 import tracemalloc
-from datetime import datetime
-
-import pyrogram
 from pyrogram import *
 
 import pyrouserbot.herokulog
-from pyrouserbot import app, cmd
+from pyrouserbot import cmd
 
 fileList = glob.glob('pyrouserbot/log/*')
 tracemalloc.start()
